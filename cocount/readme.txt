@@ -1,8 +1,14 @@
-cocount.py is contained in the folder infocore_tools/app. It reads cooccurrence files created by the script cooc.py. Cooccurrence files contain a textID, two concepts IDs and a cooccurrence score separated by commas in every line. Ex.
+cocount.py is contained in the folder infocore_tools/app. It reads cooccurrence files created by the script cooc.py. Cooccurrence
+files contain a textID, two concepts IDs and a cooccurrence score separated by commas in every line. Ex.
 1709402,10234,40648,2.993
-cocount.py provides options to count cooccurrences scores of concept pairs for specific concepts and texts. The output of cocount.py is a cooccurrence matrix which depends on the parameters passed to the program. The cooccurrence scores in the output have three decimal places after the decimal mark.
-Output files are named "cocounts_" followed by the full program call if no suffix is passed. If a suffix is passed output files start with "cocounts_" followed by the project ID, set ID and the suffix. Output files are written to the results folder. Example calls are at the end of this file. The program can be run in the infocore_tools/app folder. Results are than created in the folder infocore_tools/results.
-Several example output files can be created by running the automated tests in the test folder. This can be done by running the test_cocount.py file in the folder infocore_tools/test. Ex. python test_cocount.py. Output files are than created in infocore_tools/test/results. The program is written for python version 2. 
+cocount.py provides options to count cooccurrences scores of concept pairs for specific concepts and texts. The output of cocount.py
+is a cooccurrence matrix which depends on the parameters passed to the program. The cooccurrence scores in the output have three
+decimal places after the decimal mark. Output files are named "cocounts_" followed by the full program call if no suffix is passed. If
+a suffix is passed output files start with "cocounts_" followed by the project ID, set ID and the suffix. Output files are written to
+the results folder. Example calls are at the end of this file. The program can be run in the infocore_tools/app folder. Results are
+than created in the folder infocore_tools/results. Several example output files can be created by running the automated tests in the
+test folder. This can be done by running the test_cocount.py file in the folder infocore_tools/test. Ex. python test_cocount.py.
+Output files are than created in infocore_tools/test/results. The program is written for python version 2. 
 
 There are seven parameters which control the behaviour of the program:
 
