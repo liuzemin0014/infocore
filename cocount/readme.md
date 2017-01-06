@@ -20,6 +20,8 @@ There are seven parameters which control the behaviour of the program:
 6. optional: suffix
 7. selection of concepts
 
+Parameters explained:
+
 1. and 2:
 The projectid and the setid define which cooccurrence file should be opened. The cooccurrence files should be placed in the source_texts folder.
 
@@ -31,28 +33,28 @@ The projectid and the setid define which cooccurrence file should be opened. The
 
 6. The sixth parameter is optional. With it a suffix containing an underscore can be passed. If a suffix is passed, the program expects a cooccurrence file with a suffix. Ex. cooccurrences_15_639_suffix.txt. The suffix is attached to the output file. Ex. cocounts_15_639_suffix.csv.
 
-7. The concepts to be considered are selected in the seventh parameter. There are three ways of passing concepts. The first way is to directly pass them via the command line. See example call 1 below. The second option is to provide a concept selection file. A concept selection file contains one concept ID per line. Concept selection files should be placed in the concept_selection_files folder. Concept selection files must not contain underscores. The third way of passing concepts is via the keywords "all" and "any". All considers all concept pairs of concepts 10001 until 401716. Any considers all concept pairs which have none-zero cooccurrence counts in the cooccurrence file. An example call for any can be seen below. The selection all can take some time because many concepts are considered. This also depends on the size of the text selection. The cooccurrence scores are computed for every pair which can be formed from the selected concepts. Ex. If concepts 1 5 and 7 are selected, pairs 1;5, 1;7, 5;7 and 1,7 are considered. Reversed pairs like 5;1 are also shown in the output matrix. They have the same scores like their reverse pair. 
+7. The concepts to be considered are selected in the seventh parameter. There are three ways of passing concepts. The first way is to directly pass them via the command line. See example call 1 below. The second option is to provide a concept selection file. A concept selection file contains one concept ID per line. Concept selection files should be placed in the concept_selection_files folder. Concept selection files must not contain underscores. The third way of passing concepts is via the keywords "all" and "any". All considers all concept pairs of concepts 10001 until 401716. Any considers all concept pairs which have none-zero cooccurrence counts in the cooccurrence file. An example call for any can be seen below. The selection all can take some time because many concepts are considered. This also depends on the size of the text selection. The cooccurrence scores are computed for every pair which can be formed from the selected concepts. Ex. If concepts 1, 5 and 7 are selected, the pairs 1-5, 1-7, 5-7 and 1-7 are considered. Reversed pairs like 5-1 are also shown in the output matrix. They have the same scores like their reverse pair. 
 
 
-Example for a simple grouping file:
+Example for the content of a simple grouping file:
 
-id
-1709402
-1709412
-1709413
+id  
+1709402  
+1709412  
+1709413  
 
 Example for a grouping file with groups:
 
-id,a,b
-1722473,Group 1,high
-1709404,Group 2,low
-1709418,,high
-1709419,Group 1,
+id,a,b  
+1722473,Group 1,high  
+1709404,Group 2,low  
+1709418,,high  
+1709419,Group 1,  
 
 Example for a concept selection file:
-10836
-11159
-10082
+10836  
+11159  
+10082  
 
 Example calls:
 
@@ -71,8 +73,7 @@ python cocount.py 15 639 example_grouping_file.txt c y exampleConceptSelection.t
 
 output file: infocore_tools/app/results/cocounts_15_639_example_grouping_file.txt_c_y_exampleConceptSelection.txt.csv
 
-3. 
-
+3.
 Count cooccurrences of the concepts contained in exampleConceptSelection.txt in the texts contained in grouping_file_withGroups.txt in the file cooccurrences_15_639.txt. Sum cooccurrence scores (s). Write concept IDs to the output file (y).
 
 python cocount.py 15 639 grouping_file_withGroups.txt s y exampleConceptSelection.txt
@@ -83,10 +84,12 @@ infocore_tools/app/results/cocounts_15_639_grouping_file_withGroups.txt_s_y_exam
 infocore_tools/app/results/cocounts_15_639_grouping_file_withGroups.txt_s_y_exampleConceptSelection.txt_high.csv
 infocore_tools/app/results/cocounts_15_639_grouping_file_withGroups.txt_s_y_exampleConceptSelection.txt_low.csv
 
-4. Count cooccurrences of concept pairs which have none-zero counts in cooccurrences_15_639 and occurr in texts contained in example_grouping_file.txt. Add the number of texts which contain a cooccurence of one of the concept pairs (c). Write concept IDs to the output file (y).
+4.
+Count cooccurrences of concept pairs which have none-zero counts in cooccurrences_15_639 and occurr in texts contained in example_grouping_file.txt. Add the number of texts which contain a cooccurence of one of the concept pairs (c). Write concept IDs to the output file (y).
 
 python cocount.py 15 639 example_grouping_file.txt c y any
 
-5. Same as 4 with a suffix. Note that a cooccurrence file named cooccurrences_15_639_suffix.txt is necessary to call the program like this. The cooccurrence file should be placed in the folder infocore_tools/app/source_texts
+5.
+Same as 4 with a suffix. Note that a cooccurrence file named cooccurrences_15_639_suffix.txt is necessary to call the program like this. The cooccurrence file should be placed in the folder infocore_tools/app/source_texts
 
 python cocount.py 15 639 example_grouping_file.txt c y _suffix any
