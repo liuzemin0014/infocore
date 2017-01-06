@@ -44,7 +44,9 @@ When a concept selection in this format is given to the program, the groups are 
 Output Files
 
 
-Output files are written to the "results" folder. The output filenames contain the names of all three files passed to the program and the prefix "sortedFrequencies". For example sortedFrequencies_textSel.txt_conSel2.txt_filtered_td_15_639.txt_.txt. Output files contain concept IDs and their frequencies or group names and their frequencies separated by comma. Examples:
+Output files are written to the "results" folder. The output filenames contain the names of all three files passed to the program and
+the prefix "sortedFrequencies". For example sortedFrequencies_textSel.txt_conSel2.txt_filtered_td_15_639.txt_.txt. Output files
+contain concept IDs and their frequencies or group names and their frequencies separated by comma. Examples:  
 40228,64  
 30781,50  
 11159,42  
